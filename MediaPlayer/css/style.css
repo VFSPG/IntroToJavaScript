@@ -1,14 +1,31 @@
 /* Copyright (C) 2018 Scott Henshaw, All Rights Reserved */
-.hide { display:none; }
+header {
+    position: relative;
+    margin: 30px auto 0;
+    width: 320px;
+    height: 44px;
+    line-height: 44px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 700;
+    font-size: 1.75em;
+}
+
 .box-border {
     border:1px solid blue;
     width:90%;
 }
+
 .box-dashed {
     border:2px dashed red;
 }
-.editor {
-    background-image: url('../images/myBackground.jpg');
-    height: 720px;
-    width: 1024px;
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-item {
+    flex: 1;
 }

@@ -8,14 +8,71 @@
         <link rel="stylesheet" type="text/css" href="css/mobile.css" />
     </head>
     <body>
-        <div class="box-border container">
-            <h2>Media Player</h2>
-        </div>
-        <div class="box-dashed">Some content</div>
+        <section id="app-container" class="flex-container">
+            <header>
+                <div id="hamburger-menu"></div>
+                <h2>Media Player</h2>
+                <div id="extras-btn"></div>
+            </header>
 
-        <section id="editor-area" class="editor">
-            <div id="level-area"></div>
-            <div id="obstacle-library"></div>
+            <aside id="left-menu" class="left">
+                <div id="sidebar-accordion">
+
+                    <div class="group">
+                        <h3>Media Info</h3>
+                        <div id="wikipedia-info"><?php //Dynamic content here ?></div>
+                    </div>
+
+                    <div class="group">
+                        <h3>Support/Contact</h3>
+                        <div></div>
+                    </div>
+
+                    <div class="group">
+                        <h3>About</h3>
+                        <div>Developed by the Instructors of VFS (C) 2015</div>
+                    </div>
+
+                </div>
+            </aside>
+
+            <div id="playlist" class="flex-item">
+    	        <div id="app-area">
+    	            <section id="current-track-area">
+        	            <div id="now-playing" class="info-area">
+        	                <div id="album-image" class=></div>
+        	                <input type="text" id="track-name"  class="playing-field" name="track-name"  readonly="true" value="Said the Whale" />
+        	                <input type="text" id="track-album" class="playing-field" name="track-album" readonly="true" value="Mother" />
+        	                <input type="text" id="track-year"  class="playing-field" name="track-year"  readonly="true" value="2013" /><br />
+                            <label id='track-duration'>00:00</label>
+    	                </div>
+                    </section>
+                </div>
+            </div>
+
+            <section id="controls" class="">
+                <div id="toolbar" class="">
+                    <button id="beginning">first</button>
+                    <button id="rewind">rewind</button>
+                    <button id="play">play</button>
+                    <button id="stop">stop</button>
+                    <button id="forward">fast forward</button>
+                    <button id="end">last</button>
+
+                    <input type="checkbox" id="shuffle">
+                    <label for="shuffle">Shuffle</label>
+
+                    <span id="repeat">
+                        <input type="radio" id="repeat0" name="repeat" checked="checked">
+                        <label for="repeat0">No Repeat</label>
+                        <input type="radio" id="repeat1" name="repeat">
+                        <label for="repeat1">Once</label>
+                        <input type="radio" id="repeatall" name="repeat">
+                        <label for="repeatall">All</label>
+                    </span>
+                </div>
+                <div class="clear"></div>
+            </section>
         </section>
 
         <script type="module" src="scripts/index.js"></script>
