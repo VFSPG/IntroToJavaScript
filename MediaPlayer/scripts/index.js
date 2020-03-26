@@ -7,6 +7,8 @@
 
 import App from './App.js';
 
+
+
 (function Main() {
 
     // Wait for the DOM to finish loading (we don't want to reference things that don't exist)
