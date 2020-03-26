@@ -5,20 +5,44 @@
  */
 'use strict';
 
-function iAmBothObsoleteAndModern( parameterOne, parameterTwo = 'Not Required') {
-
-    let someValue = parameterOne + parameterTwo;
-    return someValue
-}
+import PlayList from './PlayList.js';
 
 export default class App {
 
-	constructor( device = 'web') {
+    constructor(device = 'web') {
 
-        document.querySelector('body').classList.add( device );
+        // build a playlist
+        this.thePlayList = new PlayList();
+        this.thePlayList.populate();
+        this.currentTrack = this.thePlayList.first();
+
+        this.currentSongName = "Woo hoo";
+
+        // handle user input
+        document.querySelector("#play")
+            .addEventListener("click", event => this.updateCurrentTrack("Pyromania", "Play Pressed"));
+
+        document.querySelector("#stop")
+            .addEventListener("click",  event => this.handleStop( event ) );
     }
 
-	run() {
+    handleStop( event ) {
+
+        this.updateCurrentTrack("Hello", "Stop pressed");
+        // Dont change name of the song & stop playing
+    }
+
+    updateCurrentTrack( songName = "", userMsg = "Nothing happened") {
+
+        this.currentSongName = songName;
+        document.querySelector("#virtual-console").innerHTML = userMsg
+        console.log( userMsg );
+        document.querySelector("#track-name").value = this.currentSongName;
+    }
+
+    run() {
+
+        this.updateCurrentTrack();
         // just waiting around for something to happen...
     }
 
