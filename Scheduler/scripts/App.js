@@ -5,8 +5,8 @@
  */
 'use strict';
 
-import Schedule from "./Schedule.js";
-import Course from "./Course.js";
+import Schedule from "./Schedule.js"
+import Course from "./Course.js"
 
 // export ... = something that can be imported to another module
 // ... default = the default thing to export can be imported without {}
@@ -14,8 +14,15 @@ import Course from "./Course.js";
 export default class App {
 
 	constructor() {
+        this.daysOfTheWeek = ['sunday','monday','tuesday','wednesday','thursday','friday'];
+        document.querySelector("#schedule-grid")
+            .innerHTML = this.generateSchedule( this.daysOfTheWeek );
 
-        /*
+        // Initialize any event handlers
+    }
+
+    generateSchedule( daysOfTheWeek ) {
+        /*  Builds this ...
         <table>
             <tbody>
                 <tr><td></td><td>Monday</td><td>Tuesday</td><td>Wednesday</td><td>Thursday</td><td>Friday</td></tr>
@@ -25,50 +32,48 @@ export default class App {
             </tbody>
         </table>
         */
-        let daysOfTheWeek = ['sunday','monday','tuesday','wednesday','thursday','friday'];
-        let el = document.querySelector("#schedule-grid");
-
         let markup = "<table>";   // ""  | ''  | ``
-        //let markup = '<table>';
-        //let markup = `<table>`;
         markup += "<tr><td></td>";
         for (let day of daysOfTheWeek) {
             markup += `<td id="${day}">${day}</td>`;
         }
         markup += "</tr>";
         for (let timeslot of ['am','pm','eve']) {
-            markup += `<tr><td>${timeslot}</td>`;
 
-            for (let day of daysOfTheWeek) {
-
-                markup += `<td id="${day}-${timeslot}"></td>`;
-            }
-            markup += "</tr>";
+            markup += this.generateScheduleRow( daysOfTheWeek, timeslot );
         }
         markup += "</tbody></table>";
-        el.innerHTML = markup;
-
-        // Initialize any app variables or code we will need
-        this.mySchedule = new Schedule();
-        let javaScriptCourse = new Course('JavaScript & jQuery', 0, "Thursaday");
-        let designInterface = new Course('Interface Design', 2, "Wednesday");
-
-        javaScriptCourse.setLocation("Home");
-        javaScriptCourse.assignInstructor("Scott");
-/*
-        let scottsSchedule = generateEmptySchedule();
-        let mardiasSchedule = generateEmptySchedule();
-*/
-        // Initialize any event handlers
+        return markup
     }
 
-    add( p1, p2 = 0 ) {
+    generateScheduleRow( daysOfTheWeek, timeslot ) {
+        /*
+        <tr><td>AM</td><td id="monday-am"></td><td></td><td></td><td></td><td></td></tr>
+        */
+        let markup = `<tr><td>${timeslot}</td>`;
+        for (let day of daysOfTheWeek) {
 
-        let temp = p1 + p2;
-        return temp;
+            markup += `<td id="${day}-${timeslot}"></td>`;
+        }
+        markup += "</tr>";
+
+        return markup
     }
 
-	run() {
+    // Initialize any app variables or code we will need in the constructor
+    /*
+    this.mySchedule = new Schedule();
+    let javaScriptCourse = new Course('JavaScript & jQuery', 0, "Thursday");
+    let designInterface = new Course('Interface Design', 2, "Wednesday");
+
+    javaScriptCourse.setLocation("Home");
+    javaScriptCourse.assignInstructor("Scott");
+    /*
+    let scottsSchedule = generateEmptySchedule();
+    let mardiasSchedule = generateEmptySchedule();
+    */
+
+    run() {
         // just waiting around for something to happen...
     }
 }
