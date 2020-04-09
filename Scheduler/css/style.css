@@ -1,4 +1,55 @@
 /* Copyright (C) 2018 Scott Henshaw, All Rights Reserved */
+:root {
+    --bevel-lt: #dddddd;
+    --bevel-dk: #333333;
+}
+
+td {
+    min-width: 10em;
+    min-height: 3em;
+    /* border: 1px solid green; */
+}
+
+input {
+    display: inline-block;
+}
+input.button {
+    height: 2.25em;
+}
+
+li {
+    background-color: darkgrey;
+    color:black;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+h1 { font-size: 36px; }
+
+.button {
+    display: inline-block;
+    text-align: center;
+    min-width: 6em;
+    margin: 0.15em;
+    padding: 0.15em;
+    background-color: lightgrey;
+    font-size: 14px;
+    font-weight: 700;
+    color: black;
+    border-top: 2px solid var(--bevel-lt);
+    border-left: 2px solid var(--bevel-lt);
+    border-right: 3px solid var(--bevel-dk);
+    border-bottom: 3px solid var(--bevel-dk);
+}
+.bevel {
+    border-top: 2px solid var(--bevel-dk);
+    border-left: 2px solid var(--bevel-dk);
+    border-right: 3px solid var(--bevel-lt);
+    border-bottom: 3px solid var(--bevel-lt);
+    background-color: grey;
+    padding: 0.5em;
+}
+
 .hide { display:none; }
 .box-border {
     border:1px solid blue;
@@ -11,4 +62,74 @@
     background-image: url('../images/myBackground.jpg');
     height: 720px;
     width: 1024px;
+}
+
+.schedule-grid {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end:3;
+    min-width: 59vw;
+    min-height: 59vh;
+}
+    .schedule-cell {
+        min-width: 8vw;
+        height: 12.5vh;
+        border: 1px solid green;
+    }
+
+.term-grid {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end:2;
+    min-width: 30vw;
+    min-height: 29vh;
+}
+    .term-cell {
+        min-width: 9vw;
+        text-align: right;
+    }
+    .term-cell-mid {
+        min-width: 3em;
+        text-align: center;
+    }
+
+.todo-grid {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end:5;
+    min-width: 59vw;
+    min-height: 30vh;
+}
+    .todo-list {
+        overflow-y:scroll;
+        overflow-x: hidden;
+        min-width: 57vw;
+    }
+    .todo-item {  }
+    .todo-text {
+        display: inline;
+        color: black;
+        margin-bottom: 2em;
+        vertical-align:super;
+    }
+
+
+.assign-grid {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end:5;
+    min-width: 30vw;
+    min-height: 59vh;
+}
+
+
+.container {
+    display: inline-block;
+    border: 2px solid antiquewhite;
+    margin: 0.5em;
+    /* Note: never bright fuscia */
 }

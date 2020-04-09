@@ -49,9 +49,11 @@ input, button, textarea, select { font: inherit; }
 
 
 /* Add Styles for a grey bland teaching world */
-
+:root {
+    --theme-bg: #242527;
+}
 body, html {
-    background: #242527;
+    background: var(--theme-bg);
     border: none;
     color: #fff;
     font-family: Helvetica, Arial, sans-serif;
@@ -79,7 +81,7 @@ form {
     color: white;
     /* font-size: 150%; */
 }
-input {height: 1.4em;font-weight:  700;font-size: 1.2em;}
+input { height: 1.4em; font-weight:  700; font-size: 1.2em;}
 
 .debug {
     border:1px dashed red;
@@ -108,10 +110,13 @@ input {height: 1.4em;font-weight:  700;font-size: 1.2em;}
 }
 
 .dialog {
-    box-shadow: 3px 3px 13px black;
+    box-shadow: 3px 3px 13px white;
     margin: 0 auto;
     padding: 1em;
     width: 50%;
+}
+.dialog:before {
+    background-color: rgba(128,128,128, 50);
 }
 
 .app-container {
@@ -122,8 +127,8 @@ input {height: 1.4em;font-weight:  700;font-size: 1.2em;}
 
 .grid-wrapper {
     display: grid;
-    grid-template-columns: 5em 15% 60% 15% 6em;
-    grid-template-rows: 1em 10% 55% 10em 2em;
+    grid-template-columns: 4vh 30vw 30vw 30vw 5vw;
+    grid-template-rows: 6vh 30vh 30vh 30vh 5vh;
 }
     .grid-gutter-left {
         grid-column-start: 1;
@@ -205,15 +210,3 @@ input {height: 1.4em;font-weight:  700;font-size: 1.2em;}
         width: 15%;
     }
 
-.border {
-    padding: 2px;
-    border: 4px solid black;
-}
-
-.bevel {
-    background-color: cornflowerblue;
-    border-top: 3px solid lightskyblue;
-    border-left: 3px solid lightskyblue;
-    border-right: 3px solid darkblue;
-    border-bottom: 3px solid darkblue;
-}

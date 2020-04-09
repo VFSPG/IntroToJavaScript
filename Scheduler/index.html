@@ -6,38 +6,67 @@
         <link rel="stylesheet" type="text/css" href="css/style_base.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="css/mobile.css" />
-        <style>
-            td {
-                min-width: 10em;
-                min-height: 3em;
-                border: 1px solid green;
-            }
-        </style>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body>
-        <section id="scheduler-area" class="wrapper">
+        <section id="scheduler-area" class="grid-wrapper">
+
+            <h1 class="grid-column-main grid-row-top">The Scheduler</h1>
 
             <div id="schedule" class="schedule-grid container">
                 <h3>My Schedule</h3>
-                <div id="schedule-grid" class="debug">
+                <div id="schedule-grid" class="">
                     <!-- Auto generated - day grid here with a table -->
                 </div>
             </div>
 
-            <div id="term-area" class="container">
+            <div id="term-area" class="term-grid container">
                 <h3>Term 2020-2</h3>
                 <div id="term-list">
                     <!-- Simple list here - then use code to generate -->
                 </div>
             </div>
 
-            <div id="todo-area" class="container">
+            <div id="todo-area" class="todo-grid container">
                 <h3>ToDos</h3>
+                <div class="bevel">
+                    <input id="new-item" type="text" name="new-item" value="">
+                    <span id="todo-add-item-button" class="button">Add...</span>
+                    <span id="todo-archive-checked" class="button">Archive</span>
+                </div>
+                <div class="bevel">
+                    <ul class="todo-list">
+                        <!-- Auto generate the list of todos -->
+                    </ul>
+                </div>
             </div>
 
-            <div id="assignment-area" class="container">
+            <div id="assignment-area" class="assign-grid container">
                 <h3>Assignments</h3>
-                <!-- List of checkbox items -->
+                <form id="assign-add" class="bevel">
+                    <select type="text" name="assign-program">
+                        <option value="DD">Digital Design</option>
+                        <option value="GD">Game Design</option>
+                        <option value="PD">Programming</option>
+                    </select>
+                    <select type="text" name="assign-term">
+                        <option value="1">T1</option>
+                        <option value="2">T2</option>
+                        <option value="3">T3</option>
+                        <option value="4">T4</option>
+                        <option value="5">T5</option>
+                        <option value="6">T6</option>
+                    </select>
+                    <input type="text" name="assign-course" value="" placeholder="<enter course name>" />
+                    <input type="text" name="assign-name" value="" placeholder="<enter assignment name>" />
+                    <input type="submit" class="button" value="Add..." />
+                </form>
+                <div class="bevel">
+                    <ul class="assign-list">
+                        <!-- Auto generate the list of assignments -->
+                    </ul>
+                </div>
             </div>
         </section>
 
