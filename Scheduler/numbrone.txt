@@ -1,0 +1,32 @@
+/**
+*@copyright: (C) 2020 vancouver film school. All rights reserved.
+* @author: Your Name {@link mailto:ddXXname@vfs.com}
+* @version: 1.0
+*/
+'use strict';
+
+import App from './App.js';
+
+const  AM = 0;
+const  PM = 1;
+const  EVE = 2;
+const DAYS = ["Monday","Tuesday", "Wednesday", "Thursday", "Friday"];
+
+let theschedule = [];  // list of courses
+let course = {
+    timeslot: AM, // AM, PM, EVE
+    name: "javaScript" ,
+    place: "At Home" ,
+    instructor: "The best ever",
+}
+
+//for (let aDay od DAYS) {
+    for (let i in DAYS) {
+//for (let i = 0; i < DAYS. length; i++) {
+    //theSchedule[aDay] = []; // timeslots like AM, PM, EVE
+    theSchedule[ DAYS[1] ] = [];
+}
+
+function generateEmptySchedule() {}
+>(function Main(){...
+})()
